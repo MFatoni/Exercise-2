@@ -1,0 +1,101 @@
+*{
+	margin: 0px;padding: 0px;
+}
+.container {
+	width: 100%;position: relative;display: flex;align-items: center;height: 100%;background: linear-gradient(#37b9e9,#5be2ec,#37b9e9);
+}
+.kalkulator {
+	position: absolute;display: flex;align-items: center;height: 100%;width:100%;
+}
+.isiKalkulator {
+	width:300px;padding: 20px;margin:0 auto;background: #edeeef;border-radius: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.tombol, .input, .samaDengan {
+	text-align: center;margin: 5px
+}
+.input > input {
+	width: 90%;text-align: right
+}
+.samaDengan > button {
+	width: 90%;text-align: center
+}
+.tombol >button {
+	width: 20%;margin: 1%
+}
+#tampilan {
+	min-height: 18px; width: 85%;margin: 2.5% 6.5%;padding: 1% 1%;text-align: center;overflow: auto; 
+}
+
+#tampilan > p {
+	max-width: 10px
+}
+
+.datamasukan {
+	width: 80px;
+	display: inline-block;
+	color: #f4f2ca;
+	background-color: #55acee;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	text-align: center;
+	padding: .9em 1.8em;
+	-webkit-transition: all .1s linear;
+	-moz-transition: all .1s linear;
+	transition: all .1s linear;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+.datamasukan:hover {
+	background-color: #6FC6FF;
+}
+#buttons {
+	padding-top: 50px;
+	text-align: center;
+}
+
+.btn {
+	border-radius: 5px;
+	font-size: 22px;
+	padding: 15px 25px;
+	color: #fff;
+	text-decoration: none;
+	display: inline-block;
+	position: relative;
+}
+
+.btn:active {
+	-webkit-transform: translate(0px, 5px);
+	transform: translate(0px, 5px);
+	box-shadow: 0px 1px 0px 0px;
+}
+.green {
+	background-color: #2ecc71;
+	box-shadow: 0px 5px 0px 0px #15B358;
+}
+.green:hover {
+	background-color: #48E68B;
+}
+.blue {
+	box-shadow: 0px 5px 0px 0px #3C93D5;
+	background-color: #55acee;
+}
+.blue:hover {
+	background-color: #6FC6FF;
+}
+.yellow {
+	background-color: #f1c40f;
+	box-shadow: 0px 5px 0px 0px #D8AB00;
+}
+.yellow:hover {
+	background-color: #FFDE29;
+}
+.red {
+	background-color: #e74c3c;
+	box-shadow: 0px 5px 0px 0px #CE3323;
+}
+.red:hover {
+	background-color: #FF6656;
+}

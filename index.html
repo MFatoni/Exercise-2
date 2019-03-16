@@ -1,0 +1,99 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Kalkulator | Mohammad Fatoni</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/fontawesome/css/all.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+	<div class="container grey">
+		<div class="kalkulator">
+			<div class="isiKalkulator" id="button">
+				<p id="tampilan"></p><hr><br>
+				<div class="input">
+					<input type="text" id="isiInput" class="datamasukan" value="0" readonly="true">
+				</div><br>
+				<div class="tombol">
+					<button class="btn blue " onclick="angka(1)">1</button>
+					<button class="btn blue" class="btn blue"  onclick="angka(2)">2</button>
+					<button class="btn blue"  onclick="angka(3)">3</button>
+					<button class="btn yellow"  onclick="operator(3)"><span class="fas fa-plus"></span></button>
+				</div>
+				<div class="tombol">
+					<button class="btn blue" onclick="angka(4)">4</button>
+					<button class="btn blue" onclick="angka(5)">5</button>
+					<button class="btn blue" onclick="angka(6)">6</button>
+					<button class="btn yellow" onclick="operator(2)"><span class="fa fa-minus"></span></button>
+				</div>
+				<div class="tombol">
+					<button class="btn blue" onclick="angka(7)">7</button>
+					<button class="btn blue" onclick="angka(8)">8</button>
+					<button class="btn blue" onclick="angka(9)">9</button>
+					<button class="btn yellow" onclick="operator(1)"><span class="fa fa-times"></span></button>
+				</div>
+				<div class="tombol">
+						<button onclick="location.reload(true)" class="btn red" >C</button>
+						<button onclick="angka(0)" class="btn blue">0</button>
+						<button onclick="angka('.')" class="btn blue" >.</button>
+						<button onclick="operator(0)" class="btn yellow"><span class="fa fa-divide"></span></button>
+					</div>
+				<div class="samaDengan">
+					<button onclick="total()" class="btn green"><span class="fa fa-equals"></span></button>
+				</div>
+			</div>
+		</div>
+		<script>
+			var isiInput=document.getElementById("isiInput").value;
+			var seluruh=document.getElementById("tampilan").innerHTML;
+			var operasi=[];
+			var hasil=0;
+			var param=0;
+			var angka,rumus,olah;
+			function angka(angka){
+				(isiInput == "0") ? isiInput= angka.toString() : isiInput += angka.toString();
+				document.getElementById("isiInput").value=isiInput;
+			}
+			function operator(simbol){
+				switch(simbol){
+					case 3 :
+					operasi.push(isiInput);
+					operasi.push("+")
+					isiInput='';
+					break;
+					case 2 :
+					operasi.push(isiInput);
+					operasi.push("-")
+					isiInput='';
+					break;
+					case 1 :
+					operasi.push(isiInput);
+					operasi.push("*")
+					isiInput='';
+					break;
+					case 0 :
+					operasi.push(isiInput);
+					operasi.push("/")
+					isiInput='';
+					break;
+				}
+				olah=operasi.toString().replace(/[\s,]+/g,"").trim();
+				document.getElementById("tampilan").innerHTML=olah;
+			}
+			function total() {
+				operasi.push(isiInput);
+				olah=operasi.toString().replace(/[\s,]+/g,"").trim();
+				rumus=eval(olah);
+				document.getElementById("tampilan").innerHTML=olah+"=";
+				document.getElementById("isiInput").value=rumus;
+				for (var i = 0; i <= operasi.length+250; i++) {
+					operasi.pop();
+				}
+				console.log(operasi.length);
+				param=0;
+				isiInput='';
+			}
+		</script>
+	</body>
+	</html>
